@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Part 'A' - Bulk Liquid General - Physical Checks</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <div>
+          Bulk Liquid General
+        </div>
+      </ion-col>
+      <ion-col col-2>
+        Ship
+      </ion-col>
+      <ion-col col-2>
+        Terminal
+      </ion-col>
+      <ion-col col-2>
+        Code
+      </ion-col>
+      <ion-col col-2>
+        Remarks
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let d of data">
+      <ion-col col-4>
+        {{d.title}}
+      </ion-col>
+      <ion-col ion-long-press col-2 [interval]="1000" (onPressStart)="pressed()" (onPressing)="active(d.ship, d.title)" (onPressEnd)="released()">
+        <ion-checkbox [checked]="d.ship.value"></ion-checkbox>
+        <div>
+          <ion-badge item-end *ngIf="d.ship.payload?.length > 0">{{d.ship.payload?.length}}</ion-badge>
+        </div>
+      </ion-col>
+      <ion-col col-2 (click)="test(d.ship)">
+        <ion-checkbox [checked]="d.terminal.value"></ion-checkbox>
+      </ion-col>
+      <ion-col col-2>
+        <ion-input class="input-code" type="text" [(ngModel)]="d.code.value"></ion-input>
+      </ion-col>
+      <ion-col col-2>
+        <ion-input class="input-code" type="text" [(ngModel)]="d.remark.value"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p>
+    {{data | json}}
+  </p>
+</ion-content>
