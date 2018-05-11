@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+  <ion-content class="card-background-page">
+      <ion-row>
+          <ion-col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 *ngFor="let img of data?.payload">
+              <ion-card 	>
+                  <img [src]="img"/>
+                </ion-card>
+          </ion-col>
+      </ion-row>
+      <ion-fab right bottom #fab>
+          <button ion-fab color="danger"><ion-icon name="arrow-dropleft"></ion-icon></button>
+          <ion-fab-list side="top">
+            <button ion-fab (click)="takePhoto()"><ion-icon name="camera"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+  </ion-content>
