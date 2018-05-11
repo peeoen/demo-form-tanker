@@ -1,3 +1,18 @@
 page-home {
+    ion-col {
+        border: 1px solid black;
+        text-align: center;
+    }
 
+    ion-grid {
+        transform: skew(179deg,179deg);
+    }
+
+    .input-code {
+        border: 1px solid darkgrey;
+    }
+
+    .input-code .text-input {
+        text-align: center;
+    }
 }

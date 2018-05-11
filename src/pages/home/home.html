@@ -5,13 +5,43 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h2>Part 'A' - Bulk Liquid General - Physical Checks</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+      <div>
+          Bulk Liquid General
+      </div>
+      </ion-col>
+      <ion-col col-2>
+        Ship
+      </ion-col>
+      <ion-col col-2>
+        Terminal
+      </ion-col>
+      <ion-col col-2>
+        Code
+      </ion-col>
+      <ion-col col-2>
+        Remarks
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let d of data">
+      <ion-col col-4>
+        {{d.title}}
+      </ion-col>
+      <ion-col col-2>
+        <ion-checkbox [checked]="d.ship.value"></ion-checkbox>
+      </ion-col>
+      <ion-col col-2>
+        <ion-checkbox [checked]="d.terminal.value"></ion-checkbox>
+      </ion-col>
+      <ion-col col-2>
+        <ion-input class="input-code" type="text" [(ngModel)]="d.code.value"></ion-input>
+      </ion-col>
+      <ion-col col-2>
+          <ion-input class="input-code" type="text" [(ngModel)]="d.remark.value"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

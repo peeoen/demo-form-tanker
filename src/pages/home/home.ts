@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { BulkLiquid } from './../../models/bulk.model';
+import { BulkService } from './../../services/bulk.service';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +9,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  data: BulkLiquid[] = [];
+  constructor(public navCtrl: NavController,
+    private bulkService: BulkService) {
+    this.data = this.bulkService.data;
+    console.log(this.bulkService.data)
   }
 
 }
