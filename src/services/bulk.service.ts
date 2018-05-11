@@ -27,25 +27,25 @@ export class BulkService {
         ]
         for(let i=0; i<titles.length; i++) {
             this.data.push({
+                id: i,
                 title: titles[i],
                 ship: {
-                    attact: null,
+                    payload: null,
                     value: false
                   },
                   terminal: {
-                    attact: null,
+                    payload: null,
                     value: false
                   },
                   code: {
-                    attact: null,
+                    payload: null,
                     value: codeRand[Math.round(Math.random())]
                   },
                   remark: {
-                    attact: null,
+                    payload: null,
                     value: ''
                   }
             })
         }
-        console.log(this.data);
      }
 }
