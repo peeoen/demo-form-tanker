@@ -16,3 +16,16 @@ page-home {
         text-align: center;
     }
 }
+
+// @media only screen and (orientation: landscape)  {
+    .attach-modal {
+     .modal-wrapper {
+       position: absolute;
+       top: 0 !important;
+       left: 0 !important;
+       display: block;
+       width: 100% !important;
+       height: 100% !important;
+     } 
+   }
+//  }

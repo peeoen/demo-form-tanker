@@ -1,5 +1,6 @@
 export class BulkLiquid {
-    constructor(public title: string, 
+    constructor(public id: number,
+      public title: string, 
       public ship: Value,
       public terminal: Value,
       public code: Value,
@@ -10,5 +11,5 @@ export class BulkLiquid {
   
   export interface Value {
     value: any;
-    attact: any;
+    payload: any;
   }
